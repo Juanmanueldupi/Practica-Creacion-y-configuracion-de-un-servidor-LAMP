@@ -1,0 +1,12 @@
+---
+# vars file for wordpress
+
+db_name: wordpress_bd
+db_user: wordpress_user
+db_password: asdasd
+#wp_secret_key: clave secreta
+
+#configuracion base de datos
+#d_name: wordpress_bd
+#bd_user: wordpress_user
+#bd_pass: asdasd

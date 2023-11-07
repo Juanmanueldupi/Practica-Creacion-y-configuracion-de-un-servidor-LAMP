@@ -1,0 +1,16 @@
+- hosts: all
+  become: true
+  roles:
+   - role: commons
+
+- hosts: routers
+  become: true
+  roles:
+   - role: router
+
+- hosts: equipos_red_interna
+  become: true
+  roles:
+   - role: web
+   - role: bd
+   - role: wordpress

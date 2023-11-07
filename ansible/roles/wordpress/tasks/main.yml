@@ -1,0 +1,20 @@
+---
+# tasks file for wordpress
+
+- name: "Descargar WordPress"
+  get_url:
+    url: https://wordpress.org/latest.tar.gz
+    dest: /tmp/wordpress-latest.tar.gz
+
+- name: "Extraer WordPress"
+  ansible.builtin.unarchive:
+    src: /tmp/wordpress-latest.tar.gz
+    dest: /var/www/html
+    remote_src: yes
+  become: yes
+
+- name: "Copiar archivo de configuración de WordPress"
+  ansible.builtin.copy:
+    src: /var/www/html/wordpress/wp-config-sample.php
+    dest: /var/www/html/wordpress/wp-config.php
+  become: yes
